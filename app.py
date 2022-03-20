@@ -24,7 +24,7 @@ githublink = 'https://github.com/austinlasseter/titanic-example-app'
 #df['Cabin Class'] = df['Pclass'].map({1:'first', 2: 'second', 3:'third'})
 #variables_list=['Survived', 'Female', 'Fare', 'Age']
 
-df = pd.read_excel("05-cleaning-combining-data-master/data/21-22_NBA_Stats.xlsx", sheet_name="NBA_Players")
+df = pd.read_excel("assets/21-22_NBA_Stats.xlsx", sheet_name="NBA_Players")
 #Drop duplicate players that play multiple positions
 df.drop_duplicates(subset=['PLAYER','TEAM'], inplace=True)
 
