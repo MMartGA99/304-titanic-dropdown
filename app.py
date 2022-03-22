@@ -2,8 +2,11 @@
 
 ######### Import your libraries #######
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
+from dash import dcc
+#import dash_core_components as dcc
+#import dash_html_components as html
+from dash.dependencies import Input, Output, State
 import pandas as pd
 import plotly as py
 import plotly.graph_objs as go
@@ -82,8 +85,8 @@ app.layout = html.Div(children=[
 
 ######### Interactive callbacks go here #########
 ##Decorator and function for for left dropdown and figure
-@app.callback(dash.dependencies.Output('display-value', 'figure'),
-              [dash.dependencies.Input('dropdown', 'value')])
+@app.callback(Output('display-value', 'figure'),
+              [Input('dropdown', 'value')])
 def display_value(continuous_var):
     
     results = df.groupby(["Conference","Position"])[continuous_var].mean().reset_index()
@@ -117,8 +120,8 @@ def display_value(continuous_var):
     return fig
 
 ##Decorator and function for for right dropdown and figure
-@app.callback(dash.dependencies.Output('graph2', 'figure'),
-              [dash.dependencies.Input('dropdown2', 'value')])
+@app.callback(Output('graph2', 'figure'),
+              [Input('dropdown2', 'value')])
 def scatter_Y_axis(dropdown2_value):
           
     trace1 = (go.Scatter(
