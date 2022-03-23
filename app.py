@@ -18,7 +18,7 @@ color1="rgb(165,0,38)"
 color2="rgb(49,54,149)"
 color3="rgb(253,174,97)"
 sourceurl = 'https://www.nba.com/stats/players'
-githublink = 'https://github.com/austinlasseter/titanic-example-app'
+githublink = 'https://github.com/MMartGA99/304-titanic-dropdown'
 
 
 ###### Import a dataframe #######
